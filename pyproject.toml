@@ -1,0 +1,72 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "fire-early-retirement-planner"
+version = "1.0.0"
+description = "FIRE Early Retirement Planner with Monte Carlo simulation and framework-grounded scoring."
+readme = "README.md"
+requires-python = ">=3.9"
+license = { text = "MIT" }
+authors = [
+    { name = "fire-early-retirement-planner contributors" },
+]
+keywords = ["fire", "retirement", "monte-carlo", "finance", "investment", "planning"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "Intended Audience :: Financial and Insurance Industry",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Office/Business :: Financial",
+]
+dependencies = [
+    "numpy>=1.23.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0",
+    "pytest-cov",
+    "black",
+    "mypy",
+    "ruff",
+]
+crawl = [
+    "crawl4ai>=0.3.0",
+    "requests",
+    "feedparser",
+]
+
+[project.urls]
+Homepage = "https://github.com/dungnotnull/fire-early-retirement-planner"
+Repository = "https://github.com/dungnotnull/fire-early-retirement-planner"
+Issues = "https://github.com/dungnotnull/fire-early-retirement-planner/issues"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
+addopts = "--strict-markers -v"
+
+[tool.black]
+line-length = 100
+target-version = ['py311']
+
+[tool.mypy]
+python_version = "3.11"
+warn_return_any = true
+warn_unused_configs = true
+disallow_untyped_defs = true
+
+[tool.ruff]
+line-length = 100
+select = ["E", "F", "W", "I", "N", "UP", "B", "C4", "SIM"]
+ignore = ["E501"]
