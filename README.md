@@ -1,7 +1,5 @@
 <div align="center">
 
-  <img src="https://img.icons8.com/color/96/fire.png" alt="FIRE" width="80" height="80"/>
-
   # 🔥 FIRE Early Retirement Planner
 
   **A production-grade, framework-grounded Monte Carlo retirement planning harness**
